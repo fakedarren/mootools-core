@@ -1,16 +1,15 @@
 /*
 ---
 
-script: DomReady.js
+name: DomReady
 
 description: Contains the custom event domready.
 
 license: MIT-style license.
 
-requires:
-- /Element.Event
+requires: Element.Event
 
-provides: [DomReady]
+provides: DomReady
 
 ...
 */
@@ -34,15 +33,15 @@ Element.Events.domready = {
 	
 	window.addEvent('load', domready);
 
-	if (Browser.Engine.trident){
+	if (Browser.ie){
 		var temp = document.createElement('div');
 		(function(){
-			($try(function(){
+			(Function.stab(function(){
 				temp.doScroll(); // Technique by Diego Perini
 				return document.id(temp).inject(document.body).set('html', 'temp').dispose();
 			})) ? domready() : arguments.callee.delay(50);
 		})();
-	} else if (Browser.Engine.webkit && Browser.Engine.version < 525){
+	} else if (Browser.safari && Browser.version < 4){
 		(function(){
 			(['loaded', 'complete'].contains(document.readyState)) ? domready() : arguments.callee.delay(50);
 		})();

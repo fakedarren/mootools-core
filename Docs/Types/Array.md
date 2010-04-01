@@ -1,0 +1,585 @@
+Array {#Array}
+==============
+
+A collection of Array methods.
+
+### See Also:
+
+- [MDC Array][]
+
+
+Array method: call {#call}
+--------------------------
+
+
+Array method: every {#every}
+--------------------------
+
+Returns true if every element in the array satisfies the provided testing function.
+This method is provided only for browsers without native [Array:every][] support.
+
+### Syntax:
+
+	var allPassed = myArray.every(fn[, bind]);
+
+### Arguments:
+
+1. fn   - (*function*) The function to test for each element.
+2. bind - (*object*, optional) The object to use as 'this' in the function. For more information see [Function:bind][].
+
+#### Argument: fn
+
+##### Syntax:
+
+	fn(item, index, array)
+
+##### Arguments:
+
+1. item   - (*mixed*) The current item in the array.
+2. index  - (*number*) The current item's index in the array.
+3. array  - (*array*) The actual array.
+
+### Returns:
+
+* (*boolean*) If every element in the array satisfies the provided testing function, returns true. Otherwise, returns false.
+
+### Examples:
+
+	var areAllBigEnough = [10, 4, 25, 100].every(function(item, index){
+		return item > 20;
+	}); //areAllBigEnough = false
+
+
+### See Also:
+
+- [MDC Array:every][]
+
+
+
+Array method: filter {#filter}
+--------------------------
+
+Creates a new array with all of the elements of the array for which the provided filtering function returns true.
+This method is provided only for browsers without native [Array:filter][] support.
+
+### Syntax:
+
+	var filteredArray = myArray.filter(fn[, bind]);
+
+### Arguments:
+
+1. fn   - (*function*) The function to test each element of the array. This function is passed the item and its index in the array.
+2. bind - (*object*, optional) The object to use as 'this' in the function. For more information see [Function:bind][].
+
+#### Argument: fn
+
+##### Syntax:
+
+	fn(item, index, array)
+
+##### Arguments:
+
+1. item   - (*mixed*) The current item in the array.
+2. index  - (*number*) The current item's index in the array.
+3. array  - (*array*) The actual array.
+
+### Returns:
+
+* (*array*) The new filtered array.
+
+### Examples:
+
+	var biggerThanTwenty = [10, 3, 25, 100].filter(function(item, index){
+		return item > 20;
+	}); //biggerThanTwenty = [25, 100]
+
+### See Also:
+
+- [MDC Array:filter][]
+
+
+Array method: clean {#clean}
+--------------------------
+
+Creates a new array with all of the elements of the array which are defined (i.e. not null or undefined).
+
+### Syntax:
+
+	var cleanedArray = myArray.clean();
+
+### Returns:
+
+* (*array*) The new filtered array.
+
+### Examples:
+
+	var myArray = [null, 1, 0, true, false, "foo", undefined, ""];
+	myArray.clean() // returns [1, 0, true, false, "foo", ""]
+
+
+Array method: indexOf {#indexOf}
+--------------------------
+
+Returns the index of the first element within the array equal to the specified value, or -1 if the value is not found.
+This method is provided only for browsers without native [Array:indexOf][] support.
+
+### Syntax:
+
+	var index = myArray.indexOf(item[, from]);
+
+### Returns:
+
+* (*number*) The index of the first element within the array equal to the specified value. If not found, returns -1.
+
+### Arguments:
+
+1. item - (*object*) The item to search for in the array.
+2. from - (*number*, optional: defaults to 0) The index of the array at which to begin the search.
+
+### Examples:
+
+	['apple', 'lemon', 'banana'].indexOf('lemon'); //returns 1
+	['apple', 'lemon'].indexOf('banana'); //returns -1
+
+### See Also:
+
+- [MDC Array:indexOf][]
+
+
+
+Array method: map {#map}
+--------------------------
+
+Creates a new array with the results of calling a provided function on every element in the array.
+This method is provided only for browsers without native [Array:map][] support.
+
+### Syntax:
+
+	var mappedArray = myArray.map(fn[, bind]);
+
+### Arguments:
+
+1. fn   - (*function*) The function to produce an element of the new Array from an element of the current one.
+2. bind - (*object*, optional) The object to use as 'this' in the function. For more information see [Function:bind][].
+
+#### Argument: fn
+
+##### Syntax:
+
+	fn(item, index, array)
+
+##### Arguments:
+
+1. item   - (*mixed*) The current item in the array.
+2. index  - (*number*) The current item's index in the array.
+3. array  - (*array*) The actual array.
+
+### Returns:
+
+* (*array*) The new mapped array.
+
+### Examples:
+
+	var timesTwo = [1, 2, 3].map(function(item, index){
+		return item * 2;
+	}); //timesTwo = [2, 4, 6];
+
+### See Also:
+
+- [MDC Array:map][]
+
+
+
+Array method: some {#some}
+--------------------------
+
+Returns true if at least one element in the array satisfies the provided testing function.
+This method is provided only for browsers without native [Array:some][] support.
+
+### Syntax:
+
+	var somePassed = myArray.some(fn[, bind]);
+
+### Returns:
+
+* (*boolean*) If at least one element in the array satisfies the provided testing function returns true. Otherwise, returns false.
+
+### Arguments:
+
+1. fn   - (*function*) The function to test for each element. This function is passed the item and its index in the array.
+2. bind - (*object*, optional) The object to use as 'this' in the function. For more information see [Function:bind][].
+
+#### Argument: fn
+
+##### Syntax:
+
+	fn(item, index, array)
+
+##### Arguments:
+
+1. item   - (*mixed*) The current item in the array.
+2. index  - (*number*) The current item's index in the array.
+3. array  - (*array*) The actual array.
+
+### Examples:
+
+	var isAnyBigEnough = [10, 4, 25, 100].some(function(item, index){
+		return item > 20;
+	}); //isAnyBigEnough = true
+
+### See Also:
+
+- [MDC Array:some][]
+
+
+
+Array method: associate {#associate}
+--------------------------
+
+Creates an object with key-value pairs based on the array of keywords passed in and the current content of the array.
+
+### Syntax:
+
+	var associated = myArray.associate(obj);
+
+### Arguments:
+
+1. obj - (*array*) Its items will be used as the keys of the object that will be created.
+
+### Returns:
+
+* (*object*) The new associated object.
+
+### Examples:
+
+	var animals = ['Cow', 'Pig', 'Dog', 'Cat'];
+	var sounds = ['Moo', 'Oink', 'Woof', 'Miao'];
+	sounds.associate(animals);
+	//returns {'Cow': 'Moo', 'Pig': 'Oink', 'Dog': 'Woof', 'Cat': 'Miao'}
+
+
+
+Array method: link {#link}
+--------------------------
+
+Accepts an object of key / function pairs to assign values.
+
+### Syntax:
+
+	var result = Array.link(array, object);
+
+### Arguments:
+
+1. object - (*object*)  An object containing key / function pairs must be passed to be used as a template for associating values with the different keys.
+
+### Returns:
+
+* (*object*) The new associated object.
+
+### Examples:
+
+	var el = document.createElement('div');
+	var arr2 = [100, 'Hello', {foo: 'bar'}, el, false];
+	arr2.link({myNumber: Number.type, myElement: Element.type, myObject: Object.type, myString: String.type, myBoolean: $defined});
+	//returns {myNumber: 100, myElement: el, myObject: {foo: 'bar'}, myString: 'Hello', myBoolean: false}
+
+
+
+Array method: contains {#contains}
+--------------------------
+
+Tests an array for the presence of an item.
+
+### Syntax:
+
+	var inArray = myArray.contains(item[, from]);
+
+### Arguments:
+
+1. item - (*object*) The item to search for in the array.
+2. from - (*number*, optional: defaults to 0) The index of the array at which to begin the search.
+
+### Returns:
+
+* (*boolean*) If the array contains the item specified, returns true. Otherwise, returns false.
+
+### Examples:
+
+	["a","b","c"].contains("a"); //returns true
+	["a","b","c"].contains("d"); //returns false
+
+### See Also:
+
+- [MDC Array:indexOf][]
+
+
+
+Array method: append {#append}
+--------------------------
+
+Appends the passed array to the end of the current array.
+
+### Syntax:
+
+	var myArray = myArray.append(otherArray);
+
+### Arguments:
+
+1. otherArray - (*array*) The array containing values you wish to append.
+
+### Returns:
+
+* (*array*) The original array including the new values.
+
+### Examples:
+
+	var myOtherArray = ['green', 'yellow'];
+	['red', 'blue'].appemd(myOtherArray); //returns ['red', 'blue', 'green', 'yellow'];
+
+
+
+Array method: getLast {#getLast}
+--------------------------
+
+Returns the last item from the array.
+
+### Syntax:
+
+	myArray.getLast();
+
+### Returns:
+
+* (*mixed*) The last item in this array.
+* (*null*) If this array is empty, returns null.
+
+### Examples:
+
+	['Cow', 'Pig', 'Dog', 'Cat'].getLast(); //returns 'Cat'
+
+
+
+Array method: getRandom {#getRandom}
+--------------------------
+
+Returns a random item from the array.
+
+### Syntax:
+
+	myArray.getRandom();
+
+### Returns:
+
+* (*mixed*) A random item from this array. If this array is empty, returns null.
+
+### Examples:
+
+	['Cow', 'Pig', 'Dog', 'Cat'].getRandom(); //returns one of the items
+
+
+
+Array method: include {#include}
+--------------------------
+
+Pushes the passed element into the array if it's not already present (case and type sensitive).
+
+### Syntax:
+
+	myArray.include(item);
+
+### Arguments:
+
+1. item - (*object*) The item that should be added to this array.
+
+### Returns:
+
+* (*array*) This array with the new item included.
+
+### Examples:
+
+	['Cow', 'Pig', 'Dog'].include('Cat'); //returns ['Cow', 'Pig', 'Dog', 'Cat']
+	['Cow', 'Pig', 'Dog'].include('Dog'); //returns ['Cow', 'Pig', 'Dog']
+
+
+
+Array method: combine {#combine}
+--------------------------
+
+Combines an array with all the items of another. Does not allow duplicates and is case and type sensitive.
+
+### Syntax:
+
+	myArray.combine(array);
+
+### Arguments:
+
+1. array - (*array*) The array whose items should be combined into this array.
+
+### Returns:
+
+* (*array*) This array combined with the new items.
+
+### Examples:
+
+	var animals = ['Cow', 'Pig', 'Dog'];
+	animals.combine(['Cat', 'Dog']); //animals = ['Cow', 'Pig', 'Dog', 'Cat'];
+
+
+
+Array method: erase {#erase}
+--------------------------
+
+Removes all occurrences of an item from the array.
+
+### Syntax:
+
+	myArray.erase(item);
+
+### Arguments:
+
+1. item - (*object*) The item to search for in the array.
+
+### Returns:
+
+* (*array*) This array with all occurrences of the item removed.
+
+### Examples:
+
+	['Cow', 'Pig', 'Dog', 'Cat', 'Dog'].erase('Dog') //returns ['Cow', 'Pig', 'Cat']
+	['Cow', 'Pig', 'Dog'].erase('Cat') //returns ['Cow', 'Pig', 'Dog']
+
+
+
+Array method: empty {#empty}
+--------------------------
+
+Empties an array.
+
+### Syntax:
+
+	myArray.empty();
+
+### Returns:
+
+* (*array*) This array, emptied.
+
+### Examples:
+
+	var myArray = ['old', 'data'];
+	myArray.empty(); //myArray is now []
+
+
+Array method: flatten {#flatten}
+--------------------------
+
+Flattens a multidimensional array into a single array.
+
+### Syntax:
+
+	myArray.flatten();
+
+### Returns:
+
+* (*array*) A new flat array.
+
+### Examples:
+
+	var myArray = [1,2,3,[4,5, [6,7]], [[[8]]]];
+	var newArray = myArray.flatten(); //newArray is [1,2,3,4,5,6,7,8]
+
+
+
+Array method: pick {#pick}
+--------------------------
+
+Returns the first defined value in an array.
+
+### Syntax:
+
+	var foo = myArray.pick();
+
+### Returns:
+
+* (*mixed*) The first defined value in the array.
+
+### Examples:
+
+	var foo = [null, myUndefinedVar, 'bar'];
+	alert(foo.pick());	// Alerts 'bar'
+
+
+
+Array method: hexToRgb {#hexToRgb}
+--------------------------
+
+Converts an hexidecimal color value to RGB. Input array must be the following hexidecimal color format.
+\['FF','FF','FF'\]
+
+### Syntax:
+
+	myArray.hexToRgb([array]);
+
+### Arguments:
+
+1. array - (*boolean*, optional) If true is passed, will output an array (eg. \[255, 51, 0\]) instead of a string (eg. "rgb(255,51,0)").
+
+### Returns:
+
+* (*string*) A string representing the color in RGB.
+* (*array*) If the array flag is set, an array will be returned instead.
+
+### Examples:
+
+	['11','22','33'].hexToRgb(); //returns "rgb(17,34,51)"
+	['11','22','33'].hexToRgb(true); //returns [17, 34, 51]
+
+### See Also:
+
+- [String:hexToRgb](/Native/String/#hexToRgb)
+
+
+
+Array method: rgbToHex {#rgbToHex}
+--------------------------
+
+Converts an RGB color value to hexidecimal. Input array must be in one of the following RGB color formats.
+\[255,255,255\], or \[255,255,255,1\]
+
+### Syntax:
+
+	myArray.rgbToHex([array]);
+
+### Arguments:
+
+1. array - (*boolean*, optional) If true is passed, will output an array (eg. \['ff','33','00'\]) instead of a string (eg. "#ff3300").
+
+### Returns:
+
+* (*string*) A string representing the color in hexadecimal, or 'transparent' string if the fourth value of rgba in the input array is 0 (rgba).
+* (*array*) If the array flag is set, an array will be returned instead.
+
+### Examples:
+
+	[17,34,51].rgbToHex(); //returns "#112233"
+	[17,34,51].rgbToHex(true); //returns ['11','22','33']
+	[17,34,51,0].rgbToHex(); //returns "transparent"
+
+### See Also:
+
+- [String:rgbToHex](/Native/String/#rgbToHex)
+
+
+
+[Array]: /core/Native/Array
+[Function:bind]: /core/Native/Function/#Function:bind
+[MDC Array]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array
+[MDC Array:every]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/every
+[MDC Array:filter]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/filter
+[MDC Array:indexOf]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/indexOf
+[MDC Array:map]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/map
+[MDC Array:some]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/some
+[MDC Array:forEach]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/forEach
+[Array:every]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/every
+[Array:filter]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/filter
+[Array:indexOf]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/indexOf
+[Array:map]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/map
+[Array:some]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/some

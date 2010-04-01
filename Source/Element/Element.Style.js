@@ -1,16 +1,15 @@
 /*
 ---
 
-script: Element.Style.js
+name: Element.Style
 
 description: Contains methods for interacting with the styles of Elements in a fashionable way.
 
 license: MIT-style license.
 
-requires:
-- /Element
+requires: Element
 
-provides: [Element.Style]
+provides: Element.Style
 
 ...
 */
@@ -30,7 +29,7 @@ Element.Properties.opacity = {
 			}
 		}
 		if (!this.currentStyle || !this.currentStyle.hasLayout) this.style.zoom = 1;
-		if (Browser.Engine.trident) this.style.filter = (opacity == 1) ? '' : 'alpha(opacity=' + opacity * 100 + ')';
+		if (Browser.ie) this.style.filter = (opacity == 1) ? '' : 'alpha(opacity=' + opacity * 100 + ')';
 		this.style.opacity = opacity;
 		this.store('opacity', opacity);
 	},
@@ -54,14 +53,14 @@ Element.implement({
 	setStyle: function(property, value){
 		switch (property){
 			case 'opacity': return this.set('opacity', parseFloat(value));
-			case 'float': property = (Browser.Engine.trident) ? 'styleFloat' : 'cssFloat';
+			case 'float': property = (Browser.ie) ? 'styleFloat' : 'cssFloat';
 		}
 		property = property.camelCase();
-		if ($type(value) != 'string'){
+		if (typeOf(value) != 'string'){
 			var map = (Element.Styles.get(property) || '@').split(' ');
-			value = $splat(value).map(function(val, i){
+			value = Array.from(value).map(function(val, i){
 				if (!map[i]) return '';
-				return ($type(val) == 'number') ? map[i].replace('@', Math.round(val)) : val;
+				return (typeOf(val) == 'number') ? map[i].replace('@', Math.round(val)) : val;
 			}).join(' ');
 		} else if (value == String(Number(value))){
 			value = Math.round(value);
@@ -73,7 +72,7 @@ Element.implement({
 	getStyle: function(property){
 		switch (property){
 			case 'opacity': return this.get('opacity');
-			case 'float': property = (Browser.Engine.trident) ? 'styleFloat' : 'cssFloat';
+			case 'float': property = (Browser.ie) ? 'styleFloat' : 'cssFloat';
 		}
 		property = property.camelCase();
 		var result = this.style[property];
@@ -91,7 +90,7 @@ Element.implement({
 			var color = result.match(/rgba?\([\d\s,]+\)/);
 			if (color) result = result.replace(color[0], color[0].rgbToHex());
 		}
-		if (Browser.Engine.presto || (Browser.Engine.trident && !$chk(parseInt(result, 10)))){
+		if (Browser.opera || (Browser.ie && !$chk(parseInt(result, 10)))){
 			if (property.test(/^(height|width)$/)){
 				var values = (property == 'width') ? ['left', 'right'] : ['top', 'bottom'], size = 0;
 				values.each(function(value){
@@ -99,7 +98,7 @@ Element.implement({
 				}, this);
 				return this['offset' + property.capitalize()] - size + 'px';
 			}
-			if ((Browser.Engine.presto) && String(result).test('px')) return result;
+			if ((Browser.opera) && String(result).test('px')) return result;
 			if (property.test(/(border(.+)Width|margin|padding)/)) return '0px';
 		}
 		return result;
