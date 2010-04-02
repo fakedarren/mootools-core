@@ -4,6 +4,7 @@ Core {#Core}
 Core contains an handful of common sense functions used in [MooTools](http://mootools.net).
 
 
+
 Function: nil {#nil}
 --------------------
 
@@ -31,6 +32,7 @@ Checks to see if a value is defined.
 ### Notes:
 
 This method is equivalent to *$defined* from MooTools 1.2.
+
 
 
 Function: typeOf {#typeOf}
@@ -77,6 +79,7 @@ Returns the type of object that matches the item passed in.
 This method is equivalent to *$type* from MooTools 1.2.
 
 
+
 Function: instanceOf {#instanceOf}
 ----------------------------------
 
@@ -104,6 +107,7 @@ Checks to see if an object is an instance of a particular Type.
 	var myClass = new Class();
 	var bar = new myClass();
 	instanceOf(bar, myClass)	// true
+
 
 
 Function: Object.each {#Object-each}
@@ -145,6 +149,7 @@ Used to iterate through an object.
 This method is an object-specific equivalent of *$each* from MooTools 1.2.
 
 
+
 Function: Object.merge {#Object-merge}
 --------------------------------------
 
@@ -174,6 +179,7 @@ Merges any number of objects recursively without referencing them or their sub-o
 	var nested = Object.merge(nestedObj1, nestedObj2); //returns: {a: {b: 2, c: 1}}
 
 
+
 Function: Object.clone {#Object-clone}
 --------------------------------------
 
@@ -199,6 +205,7 @@ Returns a copy of an object.
 	obj1.a = 42;
 	alert(obj1.a);	// alerts '42'
 	alert(obj2.a);	// alerts '0'
+
 
 
 Function: Object.append {#Object-append}
@@ -233,6 +240,7 @@ Copies all the properties from the second object passed in to the first object p
 	Object.append(firstObj, secondObj);
 	//firstObj is now: {'name': 'John', 'lastName': 'Dorian', 'age': '20', 'sex': 'male'};
 
+
  
 ----------------------
 
@@ -256,6 +264,7 @@ If you really need this function you can implement it like so:
 	var $chk = function(obj){
 		return !!(obj || obj === 0);
 	};
+
 	
 
 Function: $clear {#clear}
@@ -264,10 +273,12 @@ Function: $clear {#clear}
 This method has been deprecated. Please use [Function:clear](/core/Types/Function/#clear) instead.
 
 
+
 Function: $defined {#defined}
 -----------------------------
 
 This method has been deprecated. Please use [nil](#nil) instead.
+
 
 
 Function: $arguments {#arguments}
@@ -286,6 +297,7 @@ If you really need this function you can implement it like so:
 	};
 
 
+
 Function: $empty {#empty}
 -------------------------
 
@@ -298,6 +310,7 @@ This method has been deprecated. Use [Function.from](/core/Types/Function/#Funct
 	var myFunc = function(){};
 	
 
+
 Function: $lambda {#lambda}
 ---------------------------
 
@@ -308,10 +321,12 @@ This method has been deprecated. Use [Function.from](/core/Types/Function/#Funct
 	myLink.addEvent('click', Function.from(false)); //Prevents a link Element from being clickable.
 
 
+
 Function: $extend {#extend}
 ---------------------------
 
 This method has been deprecated. Please use [Object.append](#Object-append) instead.
+
 
 
 Function: $merge {#merge}
@@ -320,10 +335,12 @@ Function: $merge {#merge}
 This method has been deprecated. Please use [Object.merge](#Object-merge) instead.
 
 
+
 Function: $each {#each}
 -----------------------
 
 This method has been deprecated. Please use [Array.each](/core/Types/Array/#Array-each) or [Object.each](#Object-each) instead.
+
 
 
 Function: $pick {#pick}
@@ -332,16 +349,19 @@ Function: $pick {#pick}
 This method has been deprecated. Please use [Array.pick](/core/Types/Array/#pick) instead.
 
 
+
 Function: $random {#random}
 ---------------------------
 
 This method has been deprecated. Please use [Number.random](/core/Types/Number/#Number-random) instead.
 
 
+
 Function: $splat {#splat}
 -------------------------
 
 This method has been deprecated. Please use [Array.from](/core/Types/Array/#Array-from) instead.
+
 
 
 Function: $time {#time}
@@ -363,6 +383,7 @@ Function: $try {#try}
 ---------------------
 
 This method has been deprecated. Please use [Function.stab](/core/Types/Function/#Function-stab) instead.
+
 
 
 Function: $type {#type}
