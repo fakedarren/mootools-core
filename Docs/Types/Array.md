@@ -8,12 +8,72 @@ A collection of Array methods.
 - [MDC Array][]
 
 
-Function: Array.each {#Array.each}
-------------------------------------
+Function: Array.each {#Array-each}
+----------------------------------
+
+Used to iterate through arrays, or iterables that are not regular arrays, such as built in getElementsByTagName calls or arguments of a function.
+
+### Syntax:
+
+	Array.each(iterable, fn[, bind]);
+
+### Arguments:
+
+1. iterable - (*array*) The array to iterate through.
+2. fn       - (*function*) The function to test for each element.
+3. bind     - (*object*, optional) The object to use as 'this' within the function. For more information see [Function:bind][].
+
+#### Argument: fn
+
+##### Syntax:
+
+	fn(item, index, object)
+
+##### Arguments:
+
+1. item   - (*mixed*) The current item in the array.
+2. index  - (*number*) The current item's index in the array. In the case of an object, it is passed the key of that item rather than the index.
+3. object - (*mixed*) The actual array/object.
+
+### Example:
+
+	Array.each(['Sun','Mon','Tue'], function(day, index){
+		alert('name:' + day + ', index: ' + index);
+	}); //Alerts "name: Sun, index: 0", "name: Mon, index: 1", etc.
+
+### Notes:
+
+This is an array-specific equivalent of *$each* from MooTools 1.2.
+
 
 
 Function: Array.clone {#Array-clone}
 ------------------------------------
+
+Returns a copy of the passed array.
+
+### Syntax:
+
+	var clone = Array.clone(myArray);
+	
+### Arguments:
+
+1. myArray	- (*array*) The array you wish to copy.
+
+### Returns:
+
+* (*array*) a copy of the passed array.
+
+### Example:
+
+	var myArray = ['red', 'blue', 'green'];
+	var otherArray = Array.clone(myArray);
+	
+	var myArray[0] = 'yellow';
+	
+	alert(myArray[0]);		// alerts 'yellow'
+	alert(otherArray[0])	// alerts 'red'
+
 
 
 Function: Array.from {#Array-from}
@@ -44,8 +104,9 @@ Array method: call {#call}
 --------------------------
 
 
+
 Array method: every {#every}
---------------------------
+----------------------------
 
 Returns true if every element in the array satisfies the provided testing function.
 This method is provided only for browsers without native [Array:every][] support.
@@ -89,7 +150,7 @@ This method is provided only for browsers without native [Array:every][] support
 
 
 Array method: filter {#filter}
---------------------------
+------------------------------
 
 Creates a new array with all of the elements of the array for which the provided filtering function returns true.
 This method is provided only for browsers without native [Array:filter][] support.
@@ -130,8 +191,9 @@ This method is provided only for browsers without native [Array:filter][] suppor
 - [MDC Array:filter][]
 
 
+
 Array method: clean {#clean}
---------------------------
+----------------------------
 
 Creates a new array with all of the elements of the array which are defined (i.e. not null or undefined).
 
@@ -149,8 +211,9 @@ Creates a new array with all of the elements of the array which are defined (i.e
 	myArray.clean() // returns [1, 0, true, false, "foo", ""]
 
 
+
 Array method: indexOf {#indexOf}
---------------------------
+--------------------------------
 
 Returns the index of the first element within the array equal to the specified value, or -1 if the value is not found.
 This method is provided only for browsers without native [Array:indexOf][] support.
@@ -180,7 +243,7 @@ This method is provided only for browsers without native [Array:indexOf][] suppo
 
 
 Array method: map {#map}
---------------------------
+------------------------
 
 Creates a new array with the results of calling a provided function on every element in the array.
 This method is provided only for browsers without native [Array:map][] support.
@@ -266,7 +329,7 @@ This method is provided only for browsers without native [Array:some][] support.
 
 
 Array method: associate {#associate}
---------------------------
+------------------------------------
 
 Creates an object with key-value pairs based on the array of keywords passed in and the current content of the array.
 
@@ -318,7 +381,7 @@ Accepts an object of key / function pairs to assign values.
 
 
 Array method: contains {#contains}
---------------------------
+----------------------------------
 
 Tests an array for the presence of an item.
 
@@ -347,7 +410,7 @@ Tests an array for the presence of an item.
 
 
 Array method: append {#append}
---------------------------
+------------------------------
 
 Appends the passed array to the end of the current array.
 
@@ -371,7 +434,7 @@ Appends the passed array to the end of the current array.
 
 
 Array method: getLast {#getLast}
---------------------------
+--------------------------------
 
 Returns the last item from the array.
 
@@ -391,7 +454,7 @@ Returns the last item from the array.
 
 
 Array method: getRandom {#getRandom}
---------------------------
+------------------------------------
 
 Returns a random item from the array.
 
@@ -410,7 +473,7 @@ Returns a random item from the array.
 
 
 Array method: include {#include}
---------------------------
+--------------------------------
 
 Pushes the passed element into the array if it's not already present (case and type sensitive).
 
@@ -434,7 +497,7 @@ Pushes the passed element into the array if it's not already present (case and t
 
 
 Array method: combine {#combine}
---------------------------
+--------------------------------
 
 Combines an array with all the items of another. Does not allow duplicates and is case and type sensitive.
 
@@ -458,7 +521,7 @@ Combines an array with all the items of another. Does not allow duplicates and i
 
 
 Array method: erase {#erase}
---------------------------
+----------------------------
 
 Removes all occurrences of an item from the array.
 
@@ -482,7 +545,7 @@ Removes all occurrences of an item from the array.
 
 
 Array method: empty {#empty}
---------------------------
+----------------------------
 
 Empties an array.
 
@@ -501,7 +564,7 @@ Empties an array.
 
 
 Array method: flatten {#flatten}
---------------------------
+--------------------------------
 
 Flattens a multidimensional array into a single array.
 
@@ -549,7 +612,7 @@ Returns the first defined argument passed in, or null.
 
 
 Array method: hexToRgb {#hexToRgb}
---------------------------
+----------------------------------
 
 Converts an hexidecimal color value to RGB. Input array must be the following hexidecimal color format.
 \['FF','FF','FF'\]
@@ -574,12 +637,12 @@ Converts an hexidecimal color value to RGB. Input array must be the following he
 
 ### See Also:
 
-- [String:hexToRgb](/Native/String/#hexToRgb)
+- [String:hexToRgb](/Types/String/#hexToRgb)
 
 
 
 Array method: rgbToHex {#rgbToHex}
---------------------------
+----------------------------------
 
 Converts an RGB color value to hexidecimal. Input array must be in one of the following RGB color formats.
 \[255,255,255\], or \[255,255,255,1\]
@@ -605,7 +668,7 @@ Converts an RGB color value to hexidecimal. Input array must be in one of the fo
 
 ### See Also:
 
-- [String:rgbToHex](/Native/String/#rgbToHex)
+- [String:rgbToHex](/Types/String/#rgbToHex)
 
 
 
