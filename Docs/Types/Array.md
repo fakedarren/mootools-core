@@ -115,8 +115,8 @@ Returns an array with the named method applied to the array's contents.
 	
 ### Arguments:
 
-1. (*string*) The method to apply to each item in the array.
-2. (*mixed*) Any number of arguments to pass to the named method.
+1. method - (*string*) The method to apply to each item in the array.
+2. arg1, arg2 - (*mixed*) Any number of arguments to pass to the named method.
 
 ### Returns:
 
