@@ -151,7 +151,7 @@ Converts a hyphenated string to a camelcased string.
 
 
 String method: hyphenate {#hyphenate}
----------------------------
+-------------------------------------
 
 Converts a camelcased string to a hyphenated string.
 
@@ -189,7 +189,7 @@ Converts the first letter of each word in a string to uppercase.
 
 
 String method: escapeRegExp {#escapeRegExp}
----------------------------
+-------------------------------------------
 
 Escapes all regular expression characters from the string.
 
@@ -208,7 +208,7 @@ Escapes all regular expression characters from the string.
 
 
 String method: toInt {#toInt}
----------------------------
+-----------------------------
 
 Parses this string and returns a number of the specified radix or base.
 
@@ -237,7 +237,7 @@ Parses this string and returns a number of the specified radix or base.
 
 
 String method: toFloat {#toFloat}
----------------------------
+---------------------------------
 
 Parses this string and returns a floating point number.
 
@@ -262,7 +262,7 @@ Parses this string and returns a floating point number.
 
 
 String method: hexToRgb {#hexToRgb}
----------------------------
+-----------------------------------
 
 Converts a hexidecimal color value to RGB. Input string must be in one of the following hexidecimal color formats (with or without the hash).
 '#ffffff', #fff', 'ffffff', or 'fff'
@@ -289,7 +289,7 @@ Converts a hexidecimal color value to RGB. Input string must be in one of the fo
 
 
 String method: rgbToHex {#rgbToHex}
----------------------------
+-----------------------------------
 
 Converts an RGB color value to hexidecimal. Input string must be in one of the following RGB color formats.
 "rgb(255,255,255)", or "rgba(255,255,255,1)"
@@ -320,7 +320,7 @@ Converts an RGB color value to hexidecimal. Input string must be in one of the f
 
 
 String method: substitute {#substitute}
----------------------------
+---------------------------------------
 
 Substitutes keywords in a string using an object/array.
 Removes undefined keywords and ignores escaped keywords.
@@ -353,4 +353,4 @@ Removes undefined keywords and ignores escaped keywords.
 [MDC parseFloat]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Functions/parseFloat
 [MDC Array]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array
 [String:trim]: #String:trim
-[Array:rgbToHex]: /core/Native/Array/#Array:rgbToHex
+[Array:rgbToHex]: /core/Types/Array/#Array:rgbToHex
