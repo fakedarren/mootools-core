@@ -27,6 +27,10 @@ Checks to see if a value is defined.
 		if(nil(arg)) alert('The object is defined.');
 		else alert('The object is null or undefined.');
 	}
+	
+### Notes:
+
+This method is equivalent to *$defined* from MooTools 1.2.
 
 
 Function: typeOf {#typeOf}
@@ -67,6 +71,10 @@ Returns the type of object that matches the item passed in.
 
 	var myString = 'hello';
 	typeOf(myString); //Returns "string".
+	
+### Notes:
+
+This method is equivalent to *$type* from MooTools 1.2.
 
 
 Function: instanceOf {#instanceOf}
@@ -131,7 +139,10 @@ Used to iterate through an object.
 	Object.each({first: "Sunday", second: "Monday", third: "Tuesday"}, function(value, key){
 		alert("The " + key + " day of the week is " + value);
 	});
+	
+### Notes:
 
+This method is an object-specific equivalent of *$each* from MooTools 1.2.
 
 
 Function: Object.merge {#Object-merge}
@@ -222,6 +233,8 @@ Copies all the properties from the second object passed in to the first object p
 	Object.append(firstObj, secondObj);
 	//firstObj is now: {'name': 'John', 'lastName': 'Dorian', 'age': '20', 'sex': 'male'};
 
+ 
+----------------------
 
  
 ----------------------
@@ -320,7 +333,7 @@ This method has been deprecated. Please use [Array.pick](/core/Types/Array/#pick
 
 
 Function: $random {#random}
------------------------
+---------------------------
 
 This method has been deprecated. Please use [Number.random](/core/Types/Number/#Number-random) instead.
 
