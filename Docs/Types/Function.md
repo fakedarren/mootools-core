@@ -12,11 +12,49 @@ Function Methods.
 Function: Function.from {#Function-from}
 ----------------------------------------
 
+If the passed argument is a function, it will return itself. Otherwise, it will return a function that returns the passed argument.
+
+### Syntax:
+
+	var foo = Function.from(obj);
+	
+### Arguments:
+
+1. obj - (*mixed*) If this argument is a function, it will simply return itself. Otherwise, an object you wish to convert into a function that returns the argument.
+
+### Returns:
+
+* (*function*) Either the passed function or an anonymous function that returns the passed argument.
+
+### Examples:
+
+	var fn = Function.from(42);
+	alert(fn());	// alerts '42'
+	
+	var fn2 = Function.from(fn);
+	alert(fn2());	// alerts '42'
+	
+### Notes:
+
+This function is equivalent to the following deprecated MooTools 1.2 methods:
+
+	var fn1 = Function.from();		// Equivalent to var fn1 = $empty();
+	var fn2 = Function.from(foo);	// Equivalent to var fn2 = $lambda(foo);
+
+
+
+Function method: extend {#extend}
+---------------------------------
+
+
+Function method: implement {#implement}
+---------------------------------------
+
 
 Function method: clear {#clear}
 -------------------------------
 
-Clears a Timeout or an Interval. Useful when working with [Function:delay][] and [Function:periodical][].
+Clears a Timeout or an Interval. Useful when working with [Function:delay](#delay) and [Function:periodical](#periodical).
 
 ### Syntax:
 
