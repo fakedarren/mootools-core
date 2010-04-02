@@ -52,7 +52,3 @@ Some browser properties are attached to the Browser Object for browser and platf
 ### Plugins:
 
 * Browser.Plugins.Flash - (*boolean*) - True if Flash is present.
-
-### Notes:
-
-- Engine detection is entirely feature-based.
