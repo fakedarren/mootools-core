@@ -62,11 +62,74 @@ Function: instanceOf {#instanceOf}
 ----------------------------------
 
 
+Function: Array.each {#Array-each}
+----------------------------------
+
+Used to iterate through arrays, or iterables that are not regular arrays, such as built in getElementsByTagName calls or arguments of a function.
+
+### Syntax:
+
+	Array.each(iterable, fn[, bind]);
+
+### Arguments:
+
+1. iterable - (*array*) The array to iterate through.
+2. fn       - (*function*) The function to test for each element.
+3. bind     - (*object*, optional) The object to use as 'this' within the function. For more information see [Function:bind][].
+
+#### Argument: fn
+
+##### Syntax:
+
+	fn(item, index, object)
+
+##### Arguments:
+
+1. item   - (*mixed*) The current item in the array.
+2. index  - (*number*) The current item's index in the array. In the case of an object, it is passed the key of that item rather than the index.
+3. object - (*mixed*) The actual array/object.
+
+### Example:
+
+	Array.each(['Sun','Mon','Tue'], function(day, index){
+		alert('name:' + day + ', index: ' + index);
+	}); //Alerts "name: Sun, index: 0", "name: Mon, index: 1", etc.
 
 
-
-Function: Object.each {#Object.each}
+Function: Object.each {#Object-each}
 ------------------------------------
+
+Used to iterate through an object.
+
+### Syntax:
+
+	Object.each(obj, fn[, bind]);
+
+### Arguments:
+
+1. obj		- (*object*) The object to iterate through.
+2. fn       - (*function*) The function to test for each element.
+3. bind     - (*object*, optional) The object to use as 'this' within the function. For more information see [Function:bind][].
+
+#### Argument: fn
+
+##### Syntax:
+
+	fn(item, index, object)
+
+##### Arguments:
+
+1. item   - (*mixed*) The current item in the array.
+2. index  - (*number*) The current item's key.
+3. object - (*mixed*) The actual array/object.
+
+### Example:
+
+    //Alerts "The first day of the week is Sunday", "The second day of the week is Monday", etc:
+	Object.each({first: "Sunday", second: "Monday", third: "Tuesday"}, function(value, key){
+		alert("The " + key + " day of the week is " + value);
+	});
+
 
 
 Function: Object.merge {#Object-merge}
@@ -109,7 +172,7 @@ Function: Object.append {#Object-append}
 
 
 Deprecated Functions {#Deprecated-Functions}
-==========================================
+============================================
 
 
 Function: $chk {#chk}
@@ -197,36 +260,21 @@ Creates a function which returns the passed argument according to the index (i) 
 Function: $empty {#empty}
 -------------------------
 
-An empty function, that's it. Typically used for as a placeholder inside event methods of classes.
-
-### Syntax:
-
-	var emptyFn = $empty;
+This method has been deprecated. Use [Function.from](/core/Types/Function/#Function-from) instead.
 
 ### Example:
 
-	var myFunc = $empty;
+	var myFunc = Function.from();
+	
 
 Function: $lambda {#lambda}
 -------------------------
 
-Creates an empty function which does nothing but return the value passed.
-
-### Syntax:
-
-	var returnTrue = $lambda(true);
-
-### Arguments
-
-1. value - (*mixed*) The value for the created function to return.
-
-### Returns
-
-* (*function*) A function which returns the desired value.
+This method has been deprecated. Use [Function.from](/core/Types/Function/#Function-from) instead.
 
 ### Example:
 
-	myLink.addEvent('click', $lambda(false)); //Prevents a link Element from being clickable.
+	myLink.addEvent('click', Function.from(false)); //Prevents a link Element from being clickable.
 
 
 Function: $extend {#extend}
@@ -272,64 +320,25 @@ This method has been deprecated. Please use [Object.merge](#Object-merge) instea
 Function: $each {#each}
 -----------------------
 
-Used to iterate through iterables that are not regular arrays, such as built in getElementsByTagName calls, arguments of a function, or an object.
-
-### Syntax:
-
-	$each(iterable, fn[, bind]);
-
-### Arguments:
-
-1. iterable - (*object* or *array*) The object or array to iterate through.
-2. fn       - (*function*) The function to test for each element.
-3. bind     - (*object*, optional) The object to use as 'this' within the function. For more information see [Function:bind][].
-
-#### Argument: fn
-
-##### Syntax:
-
-	fn(item, index, object)
-
-##### Arguments:
-
-1. item   - (*mixed*) The current item in the array.
-2. index  - (*number*) The current item's index in the array. In the case of an object, it is passed the key of that item rather than the index.
-3. object - (*mixed*) The actual array/object.
-
-### Examples:
-
-#### Array Example:
-
-	$each(['Sun','Mon','Tue'], function(day, index){
-		alert('name:' + day + ', index: ' + index);
-	}); //Alerts "name: Sun, index: 0", "name: Mon, index: 1", etc.
-
-
-#### Object Example:
-
-    //Alerts "The first day of the week is Sunday", "The second day of the week is Monday", etc:
-	$each({first: "Sunday", second: "Monday", third: "Tuesday"}, function(value, key){
-		alert("The " + key + " day of the week is " + value);
-	});
-
+This method has been deprecated. Please use [Array.each](#Array-each) or [Object.each](#Object-each) instead.
 
 
 Function: $pick {#pick}
 -----------------------
 
-This method has been deprecated. Please use [Array:pick](/core/Types/Array/#pick) instead.
+This method has been deprecated. Please use [Array.pick](/core/Types/Array/#pick) instead.
 
 
 Function: $random {#random}
 -----------------------
 
-This method has been deprecated. Please use [Number:random](/core/Types/Number/#Number-random) instead.
+This method has been deprecated. Please use [Number.random](/core/Types/Number/#Number-random) instead.
 
 
 Function: $splat {#splat}
 -------------------------
 
-This method has been deprecated. Please use [Array:from](/core/Types/Array/#Array-from) instead.
+This method has been deprecated. Please use [Array.from](/core/Types/Array/#Array-from) instead.
 
 
 Function: $time {#time}
@@ -350,7 +359,7 @@ This method has been deprecated. Please use *Date.now()* instead.
 Function: $try {#try}
 ---------------------
 
-This method has been deprecated. Please use [Function:stab](/core/Types/Function/#Function-stab) instead.
+This method has been deprecated. Please use [Function.stab](/core/Types/Function/#Function-stab) instead.
 
 
 Function: $type {#type}
