@@ -107,6 +107,26 @@ Converts the argument passed in to an array if it is defined and not already an 
 Array method: call {#call}
 --------------------------
 
+Returns an array with the named method applied to the array's contents.
+
+### Syntax:
+
+	var arr = myArray.call(method, arg1[, arg2, arg3])
+	
+### Arguments:
+
+1. (*string*) The method to apply to each item in the array.
+2. (*mixed*) Any number of arguments to pass to the named method.
+
+### Returns:
+
+* (*array*) A new array containing the results of the applied method.
+
+### Example:
+
+	var foo = [4, 8, 15, 16, 23, 42];
+	var bar = foo.call('limit', 10, 30);	// bar is now [10, 10, 15, 16, 23, 30]
+
 
 
 Array method: every {#every}
