@@ -79,6 +79,7 @@ Returns a copy of the passed array.
 This is an array-specific equivalent of *$unlink* from MooTools 1.2.
 
 
+
 Function: Array.from {#Array-from}
 ----------------------------------
 
