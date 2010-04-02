@@ -25,8 +25,8 @@ Returns true if a value is undefined.
 ### Example:
 
 	function myFunction(arg){
-		if(nil(arg)) alert('The object is undefined.');
-		else alert('The object is null or defined.');
+		if(nil(arg)) alert('The object is null or undefined.');
+		else alert('The object is defined.');
 	}
 	
 ### Notes:
