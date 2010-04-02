@@ -346,7 +346,7 @@ Removes undefined keywords and ignores escaped keywords.
 
 
 
-Function: String.stripScripts {#String-stripScripts}
+String method: stripScripts {#stripScripts}
 ----------------------------------------------------
 
 Strips the String of its *<script>* tags and anything in between them.
