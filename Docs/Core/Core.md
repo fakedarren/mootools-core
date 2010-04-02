@@ -8,7 +8,7 @@ Core contains an handful of common sense functions used in [MooTools](http://moo
 Function: nil {#nil}
 --------------------
 
-Checks to see if a value is defined.
+Returns true if a value is undefined.
 
 ### Syntax:
 
@@ -20,18 +20,18 @@ Checks to see if a value is defined.
 
 ### Returns:
 
-* (*boolean*) If the object passed is not null or undefined, returns true. Otherwise, returns false.
+* (*boolean*) If the object passed is null or undefined, returns true. Otherwise, returns false.
 
 ### Example:
 
 	function myFunction(arg){
-		if(nil(arg)) alert('The object is defined.');
-		else alert('The object is null or undefined.');
+		if(nil(arg)) alert('The object is undefined.');
+		else alert('The object is null or defined.');
 	}
 	
 ### Notes:
 
-This method is equivalent to *$defined* from MooTools 1.2.
+This method is equivalent to *$defined* from MooTools 1.2, but opposite.
 
 
 
