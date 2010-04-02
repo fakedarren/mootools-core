@@ -12,6 +12,7 @@ A collection of the Number Object methods.
 Every Math method is mirrored in the Number object, both as prototype and generic.
 
 
+
 Function: Number.from {#Number-from}
 ------------------------------------
 
@@ -34,6 +35,7 @@ Returns the passed parameter as a Number, or null if not a number.
 
 	Number.from('12')		// returns 12
 	Number.from('hello')	// returns null
+
 
 
 Function: Number.random {#Number-random}
@@ -117,8 +119,6 @@ Returns this number rounded to the specified precision.
 
 Number method: times {#times}
 -----------------------------
-Number method: each {#each}
----------------------------
 
 Executes the function passed in the specified number of times.
 
