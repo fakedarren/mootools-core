@@ -22,9 +22,6 @@ Object: Browser {#Browser}
 Function: Browser.exec {#Browser-exec}
 --------------------------------------
 
-Function: String.stripScripts {#String-stripScripts}
-----------------------------------------------------
-
 * Browser.Document
 * Browser.Window
 * Browser.Element
