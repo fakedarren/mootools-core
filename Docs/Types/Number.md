@@ -12,6 +12,54 @@ A collection of the Number Object methods.
 Every Math method is mirrored in the Number object, both as prototype and generic.
 
 
+Function: Number.from {#Number-from}
+------------------------------------
+
+Returns the passed parameter as a Number, or null if not a number.
+
+### Syntax:
+
+	Number.from(arg);
+	
+### Arguments:
+
+1. arg - (*mixed*) The argument to return as a number.
+
+### Returns:
+
+* (*number*) The argument as a number.
+* (*null*) Returns null if the number cannot be converted.
+
+### Example:
+
+	Number.from('12')		// returns 12
+	Number.from('hello')	// returns null
+
+
+Function: Number.random {#Number-random}
+----------------------------------------
+
+Returns a random integer between the two passed in values.
+
+### Syntax:
+
+	var random = Number.random(min, max);
+
+### Arguments:
+
+1. min - (*number*) The minimum value (inclusive).
+2. max - (*number*) The maximum value (inclusive).
+
+### Returns:
+
+* (*number*) A random number between min and max.
+
+### Example:
+
+	alert(Number.random(5, 20)); //Alerts a random number between 5 and 20.
+
+
+
 Number method: limit {#limit}
 -----------------------------
 

@@ -8,6 +8,38 @@ A collection of Array methods.
 - [MDC Array][]
 
 
+Function: Array.each {#Array.each}
+------------------------------------
+
+
+Function: Array.clone {#Array-clone}
+------------------------------------
+
+
+Function: Array.from {#Array-from}
+----------------------------------
+
+Converts the argument passed in to an array if it is defined and not already an array.
+
+### Syntax:
+
+	var splatted = Array.from(obj);
+
+### Arguments:
+
+1. obj - (*mixed*) Any type of variable.
+
+### Returns:
+
+* (*array*) If the variable passed in is an array, returns the array. Otherwise, returns an array with the only element being the variable passed in.
+
+### Example:
+
+	Array.from('hello'); //Returns ['hello'].
+	Array.from(['a', 'b', 'c']); //Returns ['a', 'b', 'c'].
+
+
+
 Array method: call {#call}
 --------------------------
 
@@ -490,21 +522,29 @@ Flattens a multidimensional array into a single array.
 
 Array method: pick {#pick}
 --------------------------
-
-Returns the first defined value in an array.
+Returns the first defined argument passed in, or null.
 
 ### Syntax:
 
-	var foo = myArray.pick();
+	var picked = Array.pick(var1[, var2[, var3[, ...]]]);
+
+### Arguments:
+
+* (*mixed*) Any number of variables.
 
 ### Returns:
 
-* (*mixed*) The first defined value in the array.
+* (*mixed*) The first variable that is defined.
+* (*null*) If all variables passed in are `null` or `undefined`, returns `null`.
 
-### Examples:
+### Example:
 
-	var foo = [null, myUndefinedVar, 'bar'];
-	alert(foo.pick());	// Alerts 'bar'
+	function say(infoMessage, errorMessage){
+		alert(Array.pick(errorMessage, infoMessage, 'There was no message supplied.'));
+	}
+	say(); //Alerts "There was no message supplied."
+    say("This is an info message."); //Alerts "This is an info message."
+    say("This message will be ignored.", "This is the error message."); //Alerts "This is the error message."
 
 
 

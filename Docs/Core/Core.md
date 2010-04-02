@@ -62,88 +62,41 @@ Function: instanceOf {#instanceOf}
 ----------------------------------
 
 
-Function: Function.from {#Function-from}
-----------------------------------------
 
-
-Function: Array.from {#Array-from}
-----------------------------------
-
-Returns an array, not necessarily a new one <-cpojer
-
-To get a new copy do Array.slice(array) or Array.prototype.slice.call(array_like_object)  if it needs to be fast :D
-
-
-Function: Number.from {#Number-from}
-------------------------------------
-
-Returns the passed parameter as a Number, or null if not a number.
-
-### Syntax:
-
-	Number.from(arg);
-	
-### Arguments:
-
-1. arg - (*mixed*) The argument to return as a number.
-
-
-Function: String.from {#String-from}
-------------------------------------
-
-Returns the passed parameter as a String.
-
-### Syntax:
-
-	String.from(arg);
-
-### Arguments:
-
-1. arg - (*mixed*) The argument to return as a string.
-
-### Returns:
-
-* (*string*) The argument as a string.
-
-### Example:
-
-	String.from(2)	// returns '2'
-	String.from(true)	// returns 'true'
-
-
-Function: Function.hide {#Function-hide}
-----------------------------------------
-
-
-Function: Function.protect {#Function-protect}
-----------------------------------------------
-
-
-Constructor: Type {#Type} <-- Private
--------------------------
-Function: Type.isEnumerable {#Type-isEnumerable} <-- Private
-Function: Type.implement {#Type-implement} <-- Private
-Function: Type.extend {#Type-extend} <-- Private
-Function: Type.alias {#Type-alias} <-- Private
-Function: Type.mirror {#Type-mirror} <-- Private
-
-
-Function: Number.random {#Number.random}
-----------------------------------------
 
 
 Function: Object.each {#Object.each}
-------------------------------------
-Function: Array.each {#Array.each}
-------------------------------------
-
-
-Function: Array.clone {#Array-clone}
 ------------------------------------
 
 
 Function: Object.merge {#Object-merge}
 --------------------------------------
+
+Merges any number of objects recursively without referencing them or their sub-objects.
+
+### Syntax:
+
+	var merged = Object.merge(obj1, obj2[, obj3[, ...]]);
+
+### Arguments:
+
+1. (objects) Any number of objects.
+
+### Returns:
+
+* (*object*) The object that is created as a result of merging all the objects passed in.
+
+### Examples:
+
+	var obj1 = {a: 0, b: 1};
+	var obj2 = {c: 2, d: 3};
+	var obj3 = {a: 4, d: 5};
+	var merged = Object.merge(obj1, obj2, obj3); //returns {a: 4, b: 1, c: 2, d: 5}, (obj1, obj2, and obj3 are unaltered)
+
+	var nestedObj1 = {a: {b: 1, c: 1}};
+	var nestedObj2 = {a: {b: 2}};
+	var nested = Object.merge(nestedObj1, nestedObj2); //returns: {a: {b: 2, c: 1}}
+
 
 Function: Object.clone {#Object-clone}
 --------------------------------------
@@ -151,16 +104,12 @@ Function: Object.clone {#Object-clone}
 Function: Object.append {#Object-append}
 --------------------------------------
 
-
-Constructor: Hash {#Hash}
-Function: Hash.each {#Hash-each}
-Function: Hash.getClean {#Hash-getClean}
-Function: Hash.getLength {#Hash-getLength}
+ 
+----------------------
 
 
-
-Core Compatibility {#Core-Compatibility}
-========================================
+Deprecated Functions {#Deprecated-Functions}
+==========================================
 
 
 Function: $chk {#chk}
@@ -187,11 +136,137 @@ Checks to see if a value exists or is 0. Useful for allowing 0.
 		else alert('The object is either null, undefined, false, or ""');
 	}
 
-### See also:
 
-- [Function:delay][]
-- [Function:periodical][]
 
+Function: $clear {#clear}
+-------------------------
+
+This method has been deprecated. Please use [Function:clear](/core/Types/Function/#clear) instead.
+
+
+Function: $defined {#defined}
+-----------------------------
+
+Checks to see if a value is defined.
+
+### Syntax:
+
+	$defined(obj);
+
+### Arguments:
+
+1. obj - (*mixed*) The object to inspect.
+
+### Returns:
+
+* (*boolean*) If the object passed is not null or undefined, returns true. Otherwise, returns false.
+
+### Example:
+
+	function myFunction(arg){
+		if($defined(arg)) alert('The object is defined.');
+		else alert('The object is null or undefined.');
+	}
+
+
+
+Function: $arguments {#arguments}
+---------------------------------
+
+Creates a function which returns the passed argument according to the index (i) passed.
+
+### Syntax:
+
+	var argument = $arguments(i);
+
+### Arguments
+
+1. i - (*number*) The index of the argument to return.
+
+### Returns
+
+* (*function*) The function that returns a certain argument from the function's arguments.
+
+### Example:
+
+	var secondArgument = $arguments(1);
+	alert(secondArgument('a','b','c')); //Alerts "b".
+
+
+
+Function: $empty {#empty}
+-------------------------
+
+An empty function, that's it. Typically used for as a placeholder inside event methods of classes.
+
+### Syntax:
+
+	var emptyFn = $empty;
+
+### Example:
+
+	var myFunc = $empty;
+
+Function: $lambda {#lambda}
+-------------------------
+
+Creates an empty function which does nothing but return the value passed.
+
+### Syntax:
+
+	var returnTrue = $lambda(true);
+
+### Arguments
+
+1. value - (*mixed*) The value for the created function to return.
+
+### Returns
+
+* (*function*) A function which returns the desired value.
+
+### Example:
+
+	myLink.addEvent('click', $lambda(false)); //Prevents a link Element from being clickable.
+
+
+Function: $extend {#extend}
+---------------------------
+
+Copies all the properties from the second object passed in to the first object passed in.
+
+### Syntax:
+
+	$extend(original, extension);
+
+### Arguments:
+
+1. original  - (*object*) The object to be extended.
+2. extension - (*object*) The object whose properties will be copied to original.
+
+### Returns:
+
+* (*object*) The first object passed in, extended.
+
+### Examples:
+
+	var firstObj = {
+		'name': 'John',
+		'lastName': 'Doe'
+	};
+	var secondObj = {
+		'age': '20',
+		'sex': 'male',
+		'lastName': 'Dorian'
+	};
+	$extend(firstObj, secondObj);
+	//firstObj is now: {'name': 'John', 'lastName': 'Dorian', 'age': '20', 'sex': 'male'};
+
+
+
+Function: $merge {#merge}
+-------------------------
+
+This method has been deprecated. Please use [Object.merge](#Object-merge) instead.
 
 
 Function: $each {#each}
@@ -239,44 +314,51 @@ Used to iterate through iterables that are not regular arrays, such as built in 
 
 
 
-Function: $type {#type}
+Function: $pick {#pick}
 -----------------------
 
-Returns the type of object that matches the element passed in.
+This method has been deprecated. Please use [Array:pick](/core/Types/Array/#pick) instead.
+
+
+Function: $random {#random}
+-----------------------
+
+This method has been deprecated. Please use [Number:random](/core/Types/Number/#Number-random) instead.
+
+
+Function: $splat {#splat}
+-------------------------
+
+This method has been deprecated. Please use [Array:from](/core/Types/Array/#Array-from) instead.
+
+
+Function: $time {#time}
+-----------------------
+
+This method has been deprecated. Please use *Date.now()* instead.
 
 ### Syntax:
 
-	$type(obj);
-
-### Arguments:
-
-1. obj - (*object*) The object to inspect.
+	var time = Date.now();
 
 ### Returns:
 
-* 'element'    - (*string*) If object is a DOM element node.
-* 'textnode'   - (*string*) If object is a DOM text node.
-* 'whitespace' - (*string*) If object is a DOM whitespace node.
-* 'arguments'  - (*string*) If object is an arguments object.
-* 'array'      - (*string*) If object is an array.
-* 'object'     - (*string*) If object is an object.
-* 'string'     - (*string*) If object is a string.
-* 'number'     - (*string*) If object is a number.
-* 'date'       - (*string*) If object is a date.
-* 'boolean'    - (*string*) If object is a boolean.
-* 'function'   - (*string*) If object is a function.
-* 'regexp'     - (*string*) If object is a regular expression.
-* 'class'      - (*string*) If object is a Class (created with new Class, or the extend of another class).
-* 'collection' - (*string*) If object is a native htmlelements collection, such as childNodes, getElementsByTagName, etc.
-* 'window'     - (*string*) If object is the window object.
-* 'document'   - (*string*) If object is the document object.
-* 'event'      - (*string*) If object is an event.
-* false        - (*boolean*) If object is undefined, null, NaN or none of the above.
+* (*number*) - The current timestamp.
 
-### Example:
 
-	var myString = 'hello';
-	$type(myString); //Returns "string".
+
+Function: $try {#try}
+---------------------
+
+This method has been deprecated. Please use [Function:stab](/core/Types/Function/#Function-stab) instead.
+
+
+Function: $type {#type}
+-----------------------
+
+This method has been deprecated. Please use [typeOf](#typeOf) instead.
+
+
 
 
 [Hash]: /core/Native/Hash

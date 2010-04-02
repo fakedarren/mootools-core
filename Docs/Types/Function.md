@@ -9,6 +9,10 @@ Function Methods.
 
 
 
+Function: Function.from {#Function-from}
+----------------------------------------
+
+
 Function method: clear {#clear}
 -------------------------------
 

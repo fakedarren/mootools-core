@@ -9,6 +9,30 @@ A collection of the String Object prototype methods.
 
 
 
+Function: String.from {#String-from}
+------------------------------------
+
+Returns the passed parameter as a String.
+
+### Syntax:
+
+	String.from(arg);
+
+### Arguments:
+
+1. arg - (*mixed*) The argument to return as a string.
+
+### Returns:
+
+* (*string*) The argument as a string.
+
+### Example:
+
+	String.from(2)	// returns '2'
+	String.from(true)	// returns 'true'
+
+
+
 String method: test {#test}
 ---------------------------
 

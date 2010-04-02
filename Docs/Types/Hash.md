@@ -506,7 +506,7 @@ Returns true if at least one value in the object satisfies the provided testing 
 Hash Method: getClean {#Hash:getClean}
 --------------------------------------
 
-Returns a a clean object from an Hash.
+Returns a clean object from an Hash.
 
 ### Syntax:
 
