@@ -1,22 +1,15 @@
 /*
 ---
 name: Slick.Finder
+description: The new, superfast css selector engine.
 provides: Slick.Finder
 requires: Slick.Parser
-
-description: The new, superfast css selector engine.
-
-license: MIT-style
-
-authors:
-- Thomas Aylott
-- Valerio Proietti
-- Fabio M Costa
-- Jan Kassens
 ...
 */
 
 (function(){
+	
+var exports = this;
 
 var local = {};
 
@@ -31,7 +24,7 @@ local.isXML = function(document){
 
 local.setDocument = function(document){
 	
-	// filter out junk
+	// convert elements / window arguments to document. if document cannot be extrapolated, the function returns.
 	
 	if (document.nodeType === 9); // document
 	else if (document.ownerDocument) document = document.ownerDocument; // node
@@ -673,9 +666,7 @@ local.override(/^\.[\w-]+$/, function(expression, found, first){ // class overri
 		nodes = this.getElementsByClassName(className);
 		if (first) return nodes[0] || null;
 		for (i = 0; node = nodes[i++];){
-			if (!hasOthers || !local.uniques[local.getUIDHTML(node)]){
-				found.push(node);
-			}
+			if (!hasOthers || !local.uniques[local.getUIDHTML(node)]) found.push(node);
 		}
 	} else {
 		var matchClass = new RegExp('(^|\\s)'+ Slick.escapeRegExp(className) +'(\\s|$)');
@@ -707,7 +698,7 @@ if (typeof document != 'undefined') local.setDocument(document);
 
 // Slick
 
-var Slick = local.Slick = this.Slick || {};
+var Slick = local.Slick = exports.Slick || {};
 
 Slick.version = '0.9dev';
 
@@ -800,6 +791,6 @@ Slick.isXML = local.isXML;
 
 // export Slick
 
-if (!this.Slick) this.Slick = Slick;
+if (!exports.Slick) exports.Slick = Slick;
 	
-})();
+}).apply((typeof exports != 'undefined') ? exports : this);
