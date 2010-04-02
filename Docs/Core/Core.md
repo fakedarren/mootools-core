@@ -77,9 +77,38 @@ To get a new copy do Array.slice(array) or Array.prototype.slice.call(array_like
 Function: Number.from {#Number-from}
 ------------------------------------
 
+Returns the passed parameter as a Number, or null if not a number.
+
+### Syntax:
+
+	Number.from(arg);
+	
+### Arguments:
+
+1. arg - (*mixed*) The argument to return as a number.
+
 
 Function: String.from {#String-from}
 ------------------------------------
+
+Returns the passed parameter as a String.
+
+### Syntax:
+
+	String.from(arg);
+
+### Arguments:
+
+1. arg - (*mixed*) The argument to return as a string.
+
+### Returns:
+
+* (*string*) The argument as a string.
+
+### Example:
+
+	String.from(2)	// returns '2'
+	String.from(true)	// returns 'true'
 
 
 Function: Function.hide {#Function-hide}
