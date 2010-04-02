@@ -206,6 +206,9 @@ Returns a copy of an object.
 	alert(obj1.a);	// alerts '42'
 	alert(obj2.a);	// alerts '0'
 
+### Notes:
+
+This is an object-specific equivalent of *$unlink* from MooTools 1.2.
 
 
 Function: Object.append {#Object-append}

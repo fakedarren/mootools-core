@@ -74,6 +74,9 @@ Returns a copy of the passed array.
 	alert(myArray[0]);		// alerts 'yellow'
 	alert(otherArray[0])	// alerts 'red'
 
+### Notes:
+
+This is an array-specific equivalent of *$unlink* from MooTools 1.2.
 
 
 Function: Array.from {#Array-from}
