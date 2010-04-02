@@ -165,126 +165,13 @@ Function: Object.clone {#Object-clone}
 --------------------------------------
 
 Function: Object.append {#Object-append}
---------------------------------------
-
- 
-----------------------
-
-
-Deprecated Functions {#Deprecated-Functions}
-============================================
-
-
-Function: $chk {#chk}
----------------------
-
-Checks to see if a value exists or is 0. Useful for allowing 0.
-
-### Syntax:
-
-	$chk(item);
-
-### Arguments:
-
-1. item - (*mixed*) The item to inspect.
-
-### Returns:
-
-* (*boolean*) If the object passed in exists or is 0, returns true. Otherwise, returns false.
-
-### Example:
-
-	function myFunction(arg){
-		if($chk(arg)) alert('The object exists or is 0.');
-		else alert('The object is either null, undefined, false, or ""');
-	}
-
-
-
-Function: $clear {#clear}
--------------------------
-
-This method has been deprecated. Please use [Function:clear](/core/Types/Function/#clear) instead.
-
-
-Function: $defined {#defined}
------------------------------
-
-Checks to see if a value is defined.
-
-### Syntax:
-
-	$defined(obj);
-
-### Arguments:
-
-1. obj - (*mixed*) The object to inspect.
-
-### Returns:
-
-* (*boolean*) If the object passed is not null or undefined, returns true. Otherwise, returns false.
-
-### Example:
-
-	function myFunction(arg){
-		if($defined(arg)) alert('The object is defined.');
-		else alert('The object is null or undefined.');
-	}
-
-
-
-Function: $arguments {#arguments}
----------------------------------
-
-Creates a function which returns the passed argument according to the index (i) passed.
-
-### Syntax:
-
-	var argument = $arguments(i);
-
-### Arguments
-
-1. i - (*number*) The index of the argument to return.
-
-### Returns
-
-* (*function*) The function that returns a certain argument from the function's arguments.
-
-### Example:
-
-	var secondArgument = $arguments(1);
-	alert(secondArgument('a','b','c')); //Alerts "b".
-
-
-
-Function: $empty {#empty}
--------------------------
-
-This method has been deprecated. Use [Function.from](/core/Types/Function/#Function-from) instead.
-
-### Example:
-
-	var myFunc = Function.from();
-	
-
-Function: $lambda {#lambda}
--------------------------
-
-This method has been deprecated. Use [Function.from](/core/Types/Function/#Function-from) instead.
-
-### Example:
-
-	myLink.addEvent('click', Function.from(false)); //Prevents a link Element from being clickable.
-
-
-Function: $extend {#extend}
----------------------------
+----------------------------------------
 
 Copies all the properties from the second object passed in to the first object passed in.
 
 ### Syntax:
 
-	$extend(original, extension);
+	Object.append(original, extension);
 
 ### Arguments:
 
@@ -306,9 +193,86 @@ Copies all the properties from the second object passed in to the first object p
 		'sex': 'male',
 		'lastName': 'Dorian'
 	};
-	$extend(firstObj, secondObj);
+	Object.append(firstObj, secondObj);
 	//firstObj is now: {'name': 'John', 'lastName': 'Dorian', 'age': '20', 'sex': 'male'};
 
+
+ 
+----------------------
+
+
+Deprecated Functions {#Deprecated-Functions}
+============================================
+
+
+Function: $chk {#chk}
+---------------------
+
+This method has been deprecated and will have no equivalent in MooTools 2.0.
+
+If you really need this function you can implement it like so:
+
+### Example:
+
+	var $chk = function(obj){
+		return !!(obj || obj === 0);
+	};
+	
+
+Function: $clear {#clear}
+-------------------------
+
+This method has been deprecated. Please use [Function:clear](/core/Types/Function/#clear) instead.
+
+
+Function: $defined {#defined}
+-----------------------------
+
+This method has been deprecated. Please use [nil](#nil) instead.
+
+
+Function: $arguments {#arguments}
+---------------------------------
+
+This method has been deprecated and will have no equivalent in MooTools 2.0.
+
+If you really need this function you can implement it like so:
+
+### Example:
+
+	var $arguments = function(i){
+		return function(){
+			return arguments[i];
+		};
+	};
+
+
+Function: $empty {#empty}
+-------------------------
+
+This method has been deprecated. Use [Function.from](/core/Types/Function/#Function-from) instead.
+
+### Example:
+
+	var myFunc = Function.from();
+	// Or probably better....
+	var myFunc = function(){};
+	
+
+Function: $lambda {#lambda}
+---------------------------
+
+This method has been deprecated. Use [Function.from](/core/Types/Function/#Function-from) instead.
+
+### Example:
+
+	myLink.addEvent('click', Function.from(false)); //Prevents a link Element from being clickable.
+
+
+Function: $extend {#extend}
+---------------------------
+
+This method has been deprecated. Please use [Object.append](#Object-append) instead.
 
 
 Function: $merge {#merge}
