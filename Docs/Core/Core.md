@@ -7,14 +7,26 @@ Core contains an handful of common sense functions used in [MooTools](http://moo
 Function: nil {#nil}
 --------------------
 
+Checks to see if a value is defined.
 
-Function: extend {#extend}
---------------------------
+### Syntax:
 
+	nil(obj);
 
-Function: implement {#implement}
---------------------------------
+### Arguments:
 
+1. obj - (*mixed*) The object to inspect.
+
+### Returns:
+
+* (*boolean*) If the object passed is not null or undefined, returns true. Otherwise, returns false.
+
+### Example:
+
+	function myFunction(arg){
+		if(nil(arg)) alert('The object is defined.');
+		else alert('The object is null or undefined.');
+	}
 
 
 Function: typeOf {#typeOf}
@@ -57,43 +69,33 @@ Returns the type of object that matches the item passed in.
 	typeOf(myString); //Returns "string".
 
 
-
 Function: instanceOf {#instanceOf}
 ----------------------------------
 
-
-Function: Array.each {#Array-each}
-----------------------------------
-
-Used to iterate through arrays, or iterables that are not regular arrays, such as built in getElementsByTagName calls or arguments of a function.
+Checks to see if an object is an instance of a particular Type.
 
 ### Syntax:
 
-	Array.each(iterable, fn[, bind]);
-
+	instanceOf(item, object)
+	
 ### Arguments:
 
-1. iterable - (*array*) The array to iterate through.
-2. fn       - (*function*) The function to test for each element.
-3. bind     - (*object*, optional) The object to use as 'this' within the function. For more information see [Function:bind][].
+1. item - (*mixed*) The item which you want to check
+2. object - (*mixed*) The Type you wish to compare with
 
-#### Argument: fn
+### Returns:
 
-##### Syntax:
+* (*boolean*) Whether or not the item is an instance of the object.
 
-	fn(item, index, object)
+### Examples:
 
-##### Arguments:
-
-1. item   - (*mixed*) The current item in the array.
-2. index  - (*number*) The current item's index in the array. In the case of an object, it is passed the key of that item rather than the index.
-3. object - (*mixed*) The actual array/object.
-
-### Example:
-
-	Array.each(['Sun','Mon','Tue'], function(day, index){
-		alert('name:' + day + ', index: ' + index);
-	}); //Alerts "name: Sun, index: 0", "name: Mon, index: 1", etc.
+	var foo = [];
+	instanceOf(foo, Array)	// true
+	instanceOf(foo, String)	// false
+	
+	var myClass = new Class();
+	var bar = new myClass();
+	instanceOf(bar, myClass)	// true
 
 
 Function: Object.each {#Object-each}
@@ -163,6 +165,30 @@ Merges any number of objects recursively without referencing them or their sub-o
 
 Function: Object.clone {#Object-clone}
 --------------------------------------
+
+Returns a copy of an object.
+
+### Syntax:
+
+	var clone = Object.clone(obj);
+	
+### Arguments:
+
+1. (obj) The object to clone
+
+### Returns:
+
+* (*object*) A copy of the passed object
+
+### Example:
+
+	var obj1 = {a: 0, b: 1};
+	var obj2 = Object.clone(obj1);
+	
+	obj1.a = 42;
+	alert(obj1.a);	// alerts '42'
+	alert(obj2.a);	// alerts '0'
+
 
 Function: Object.append {#Object-append}
 ----------------------------------------
@@ -284,7 +310,7 @@ This method has been deprecated. Please use [Object.merge](#Object-merge) instea
 Function: $each {#each}
 -----------------------
 
-This method has been deprecated. Please use [Array.each](#Array-each) or [Object.each](#Object-each) instead.
+This method has been deprecated. Please use [Array.each](/core/Types/Array/#Array-each) or [Object.each](#Object-each) instead.
 
 
 Function: $pick {#pick}
