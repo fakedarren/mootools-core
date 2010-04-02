@@ -395,6 +395,38 @@ Function: $type {#type}
 This method has been deprecated. Please use [typeOf](#typeOf) instead.
 
 
+<<<<<<< HEAD
+=======
+### Arguments:
+
+1. obj - (*object*) The object to inspect.
+
+### Returns:
+
+* 'element'    - (*string*) If object is a DOM element node.
+* 'textnode'   - (*string*) If object is a DOM text node.
+* 'whitespace' - (*string*) If object is a DOM whitespace node.
+* 'arguments'  - (*string*) If object is an arguments object.
+* 'array'      - (*string*) If object is an array.
+* 'object'     - (*string*) If object is an object.
+* 'string'     - (*string*) If object is a string.
+* 'number'     - (*string*) If object is a number.
+* 'date'       - (*string*) If object is a date.
+* 'boolean'    - (*string*) If object is a boolean.
+* 'function'   - (*string*) If object is a function.
+* 'regexp'     - (*string*) If object is a regular expression.
+* 'class'      - (*string*) If object is a Class (created with new Class, or the extend of another class).
+* 'collection' - (*string*) If object is a native htmlelements collection, such as childNodes, getElementsByTagName, etc.
+* 'window'     - (*string*) If object is the window object.
+* 'document'   - (*string*) If object is the document object.
+* 'event'      - (*string*) If object is an event.
+* false        - (*boolean*) If object is undefined, null, NaN or none of the above.
+
+### Example:
+
+	var myString = 'hello';
+	$type(myString); //Returns "string".
+>>>>>>> b2c4778766deb16e219a8142bb65e0d1c6af78fa
 
 
 [Hash]: /core/Native/Hash

@@ -370,7 +370,14 @@ Strips the String of its *<script>* tags and anything in between them.
 	myString.stripScripts(true); //Alerts "Hello", then returns "Hello, World."
 
 
+[MDC String]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/String
+[MDC Regexp:test]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Objects/RegExp/test
+[MDC Regular Expressions]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Guide/Regular_Expressions
+[MDC parseInt]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Functions/parseInt
+[MDC parseFloat]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Functions/parseFloat
+[MDC Array]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/Array
 
+<<<<<<< HEAD:Docs/Types/String.md
 [MDC String]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/String
 [MDC Regexp:test]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Objects/RegExp/test
 [MDC Regular Expressions]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions
@@ -379,3 +386,7 @@ Strips the String of its *<script>* tags and anything in between them.
 [MDC Array]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array
 [String:trim]: #String:trim
 [Array:rgbToHex]: /core/Types/Array/#Array:rgbToHex
+=======
+[String:trim]: #String:trim
+[Array:rgbToHex]: /core/Native/Array/#Array:rgbToHex
+>>>>>>> b2c4778766deb16e219a8142bb65e0d1c6af78fa:Docs/Native/String.md

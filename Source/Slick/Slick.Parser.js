@@ -224,4 +224,8 @@ Slick.escapeRegExp = escapeRegExp;
 
 if (!exports.Slick) exports.Slick = Slick;
 	
+<<<<<<< HEAD
 }).apply((typeof exports != 'undefined') ? exports : this);
+=======
+}).apply((typeof exports != 'undefined') ? exports : this);
+>>>>>>> b2c4778766deb16e219a8142bb65e0d1c6af78fa

@@ -80,7 +80,10 @@ Function.from = function(item){
 
 Array.from = function(item){
 	if (item == null) return [];
+<<<<<<< HEAD
 	
+=======
+>>>>>>> b2c4778766deb16e219a8142bb65e0d1c6af78fa
 	return (Type.isEnumerable(item)) ? (typeOf(item) == 'array') ? item : Array.prototype.slice.call(item) : [item];
 };
 
@@ -108,6 +111,7 @@ Function.implement({
 	}
 	
 });
+<<<<<<< HEAD
 
 // Type
 
@@ -130,6 +134,30 @@ var Type = this.Type = function(name, object){
 		}
 	}
 
+=======
+
+// Type
+
+var Type = this.Type = function(name, object){
+	var lower = (name || '').toLowerCase();
+	
+	if (name){
+		var typeCheck = function(item){
+			return (typeOf(item) == lower);
+		};
+		
+		Type['is' + name] = typeCheck;
+		if (object != null){
+			object.prototype.$family = (function(){
+				return lower;
+			}).hide();
+			/*<block name="compatibility" version="1.2">*/
+			object.type = typeCheck;
+			/*</block>*/
+		}
+	}
+
+>>>>>>> b2c4778766deb16e219a8142bb65e0d1c6af78fa
 	if (object == null) return null;
 	
 	object.extend(this);
@@ -139,8 +167,15 @@ var Type = this.Type = function(name, object){
 	return object;
 };
 
+<<<<<<< HEAD
 Type.isEnumerable = function(item){
 	return (typeof item == 'object' && typeof item.length == 'number');
+=======
+var objectToString = Object.prototype.toString;
+
+Type.isEnumerable = function(item){
+	return (objectToString.call(item) != '[object Function]' && typeof item != 'string' && typeof item.length == 'number');
+>>>>>>> b2c4778766deb16e219a8142bb65e0d1c6af78fa
 };
 
 var hooks = {};

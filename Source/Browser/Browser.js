@@ -171,7 +171,11 @@ try {
 	arrayFrom(document.html.childNodes);
 } catch(e){
 	Array.from = function(item){
+<<<<<<< HEAD
 		if (item != null && typeOf(item) != 'array'){
+=======
+		if (item != null && typeOf(item) != 'array' && Type.isEnumerable(item)){
+>>>>>>> b2c4778766deb16e219a8142bb65e0d1c6af78fa
 			var i = item.length, array = new Array(i);
 			while (i--) array[i] = item[i];
 			return array;

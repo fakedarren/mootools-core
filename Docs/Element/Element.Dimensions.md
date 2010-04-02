@@ -219,6 +219,7 @@ Returns the parent of the element that is positioned, if there is one.
 * (*mixed*) If the element has a parent that is positioned, it returns that element, otherwise it returns *null*.
 
 [$]: /core/Element/Element#dollar
+<<<<<<< HEAD
 [MDC Element:scrollLeft]: http://developer.mozilla.org/en/docs/DOM:element.scrollLeft
 [MDC Element:scrollTop]: http://developer.mozilla.org/en/docs/DOM:element.scrollTop
 [MDC Element:offsetWidth]: http://developer.mozilla.org/en/docs/DOM:element.offsetWidth
@@ -226,3 +227,11 @@ Returns the parent of the element that is positioned, if there is one.
 [MDC Element:scrollWidth]: http://developer.mozilla.org/en/docs/DOM:element.scrollWidth
 [MDC Element:scrollHeight]: http://developer.mozilla.org/en/docs/DOM:element.scrollHeight
 [Element.measure]: /more/Element/Element.Measure
+=======
+[MDC Element:scrollLeft]: http://developer.mozilla.org/en/docs/DOM/element.scrollLeft
+[MDC Element:scrollTop]: http://developer.mozilla.org/en/docs/DOM/element.scrollTop
+[MDC Element:offsetWidth]: http://developer.mozilla.org/en/docs/DOM/element.offsetWidth
+[MDC Element:offsetHeight]: http://developer.mozilla.org/en/docs/DOM/element.offsetHeight
+[MDC Element:scrollWidth]: http://developer.mozilla.org/en/docs/DOM/element.scrollWidth
+[MDC Element:scrollHeight]: http://developer.mozilla.org/en/docs/DOM/element.scrollHeight
+>>>>>>> b2c4778766deb16e219a8142bb65e0d1c6af78fa

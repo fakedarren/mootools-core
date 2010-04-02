@@ -698,6 +698,7 @@ Converts an RGB color value to hexidecimal. Input array must be in one of the fo
 
 [Array]: /core/Native/Array
 [Function:bind]: /core/Native/Function/#Function:bind
+<<<<<<< HEAD:Docs/Types/Array.md
 [MDC Array]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array
 [MDC Array:every]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/every
 [MDC Array:filter]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/filter
@@ -710,3 +711,17 @@ Converts an RGB color value to hexidecimal. Input array must be in one of the fo
 [Array:indexOf]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/indexOf
 [Array:map]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/map
 [Array:some]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/some
+=======
+[MDC Array]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/Array
+[MDC Array:every]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/Array/every
+[MDC Array:filter]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/Array/filter
+[MDC Array:indexOf]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/Array/indexOf
+[MDC Array:map]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/Array/map
+[MDC Array:some]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/Array/some
+[MDC Array:forEach]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/Array/forEach
+[Array:every]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/Array/every
+[Array:filter]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/Array/filter
+[Array:indexOf]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/Array/indexOf
+[Array:map]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/Array/map
+[Array:some]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/Array/some
+>>>>>>> b2c4778766deb16e219a8142bb65e0d1c6af78fa:Docs/Native/Array.md
