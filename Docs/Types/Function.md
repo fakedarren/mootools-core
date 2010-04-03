@@ -308,6 +308,7 @@ This allows the function to be used in conjunction with [Element:addEvent][] and
 	}.bindWithEvent(Log, 100));
 
 
+
 Function method: attempt {#attempt}
 -----------------------------------
 
@@ -411,13 +412,6 @@ Executes a function in the specified intervals of time. Periodic execution can b
 [options]: #Function:create:options
 [Element:addEvent]: /core/Element/Element.Event/#Element:addEvent
 [$clear]: /core/Core/Core/#clear
-<<<<<<< HEAD:Docs/Types/Function.md
 [MDC Function]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Function
 [MDC setInterval]: https://developer.mozilla.org/en/DOM/window.setInterval
 [MDC setTimeout]: https://developer.mozilla.org/en/DOM/window.setTimeout
-=======
-
-[MDC Function]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/Function
-[MDC setInterval]: http://developer.mozilla.org/en/docs/DOM/window.setInterval
-[MDC setTimeout]: http://developer.mozilla.org/en/docs/DOM/window.setTimeout
->>>>>>> b2c4778766deb16e219a8142bb65e0d1c6af78fa:Docs/Native/Function.md

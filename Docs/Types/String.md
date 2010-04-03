@@ -264,7 +264,7 @@ Parses this string and returns a floating point number.
 String method: hexToRgb {#hexToRgb}
 -----------------------------------
 
-Converts a hexidecimal color value to RGB. Input string must be in one of the following hexidecimal color formats (with or without the hash).
+Converts a hexidecimal colour value to RGB. Input string must be in one of the following hexidecimal colour formats (with or without the hash).
 '#ffffff', #fff', 'ffffff', or 'fff'
 
 ### Syntax:
@@ -291,7 +291,7 @@ Converts a hexidecimal color value to RGB. Input string must be in one of the fo
 String method: rgbToHex {#rgbToHex}
 -----------------------------------
 
-Converts an RGB color value to hexidecimal. Input string must be in one of the following RGB color formats.
+Converts an RGB colour value to hexidecimal. Input string must be in one of the following RGB color formats.
 "rgb(255,255,255)", or "rgba(255,255,255,1)"
 
 ### Syntax:
@@ -304,7 +304,7 @@ Converts an RGB color value to hexidecimal. Input string must be in one of the f
 
 ### Returns:
 
-* (*string*) A string representing the color in hexadecimal, or transparent if the fourth value of rgba in the input string is 0.
+* (*string*) A string representing the colour in hexadecimal, or transparent if the fourth value of rgba in the input string is 0.
 * (*array*) If the array flag is set, an array will be returned instead.
 
 ### Examples:
@@ -341,8 +341,8 @@ Removes undefined keywords and ignores escaped keywords.
 ### Examples:
 
 	var myString = "{subject} is {property_1} and {property_2}.";
-	var myObject = {subject: 'Jack Bauer', property_1: 'our lord', property_2: 'savior'};
-	myString.substitute(myObject); //Jack Bauer is our lord and savior
+	var myObject = {subject: 'Jack Bauer', property_1: 'our lord', property_2: 'saviour'};
+	myString.substitute(myObject); //Jack Bauer is our lord and saviour
 
 
 
@@ -370,14 +370,7 @@ Strips the String of its *<script>* tags and anything in between them.
 	myString.stripScripts(true); //Alerts "Hello", then returns "Hello, World."
 
 
-[MDC String]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/String
-[MDC Regexp:test]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Objects/RegExp/test
-[MDC Regular Expressions]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Guide/Regular_Expressions
-[MDC parseInt]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Functions/parseInt
-[MDC parseFloat]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Functions/parseFloat
-[MDC Array]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/Array
 
-<<<<<<< HEAD:Docs/Types/String.md
 [MDC String]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/String
 [MDC Regexp:test]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Objects/RegExp/test
 [MDC Regular Expressions]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions
@@ -386,7 +379,4 @@ Strips the String of its *<script>* tags and anything in between them.
 [MDC Array]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array
 [String:trim]: #String:trim
 [Array:rgbToHex]: /core/Types/Array/#Array:rgbToHex
-=======
 [String:trim]: #String:trim
-[Array:rgbToHex]: /core/Native/Array/#Array:rgbToHex
->>>>>>> b2c4778766deb16e219a8142bb65e0d1c6af78fa:Docs/Native/String.md

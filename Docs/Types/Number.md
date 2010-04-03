@@ -182,8 +182,4 @@ Returns this number as another number with the passed in base. Useful because to
 
 
 
-<<<<<<< HEAD:Docs/Types/Number.md
 [MDC Number]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Number
-=======
-[MDC Number]: http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference/Global_Objects/Number
->>>>>>> b2c4778766deb16e219a8142bb65e0d1c6af78fa:Docs/Native/Number.md

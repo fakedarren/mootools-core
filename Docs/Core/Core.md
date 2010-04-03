@@ -395,8 +395,6 @@ Function: $type {#type}
 This method has been deprecated. Please use [typeOf](#typeOf) instead.
 
 
-<<<<<<< HEAD
-=======
 ### Arguments:
 
 1. obj - (*object*) The object to inspect.
@@ -426,7 +424,7 @@ This method has been deprecated. Please use [typeOf](#typeOf) instead.
 
 	var myString = 'hello';
 	$type(myString); //Returns "string".
->>>>>>> b2c4778766deb16e219a8142bb65e0d1c6af78fa
+
 
 
 [Hash]: /core/Native/Hash
